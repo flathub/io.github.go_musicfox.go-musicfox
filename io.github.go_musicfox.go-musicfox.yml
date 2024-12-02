@@ -32,7 +32,6 @@ modules:
     sources:
       - type: git
         url: "https://github.com/go-musicfox/go-musicfox.git"
-        tag: v4.5.7
-        commit: 1629dd8dbaa2f433bd9011db58ba3c639a15fd0c
+        tag: v4.6.0
       - type: file
         path: io.github.go_musicfox.go-musicfox.appdata.xml
