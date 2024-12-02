@@ -15,13 +15,14 @@ build-options:
   env:
     - GOBIN=/app/bin
     - GOROOT=/usr/lib/sdk/golang
+  append-path: /usr/lib/sdk/golang/bin
 
 modules:
   - name: musicfox
     buildsystem: simple
     build-commands:
-      - $GOROOT/bin/go build -trimpath -o musicfox cmd/musicfox.go
-      - install -Dm00755 musicfox ${FLATPAK_DEST}/bin/musicfox
+      - make
+      - install -Dm00755 bin/musicfox ${FLATPAK_DEST}/bin/musicfox
       # Upstream icon is 1024x1024. Shrink to 512x512 to conform to icon standard. 
       - ffmpeg -hide_banner -i previews/logo.png -vf scale=512:512 app-icon.png
       - install -Dm00644 app-icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
