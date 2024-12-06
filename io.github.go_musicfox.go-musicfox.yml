@@ -10,6 +10,8 @@ finish-args:
     - --share=network
     - --socket=pulseaudio
     - --talk-name=org.freedesktop.Notifications
+    # App uses an ID different from FLAPAK_ID on DBus
+    - --own-name=org.mpris.MediaPlayer2.musicfox.*
 
 build-options:
   env:
