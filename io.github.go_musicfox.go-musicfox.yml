@@ -44,3 +44,5 @@ modules:
           tag-template: v$version
       - type: file
         path: io.github.go_musicfox.go-musicfox.appdata.xml
+      - type: patch
+        path: icon.patch

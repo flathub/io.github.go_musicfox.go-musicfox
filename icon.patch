@@ -1,0 +1,14 @@
+diff --git a/utils/notify/notification.go b/utils/notify/notification.go
+index 0b3421c..379bb00 100644
+--- a/utils/notify/notification.go
++++ b/utils/notify/notification.go
+@@ -141,5 +141,9 @@ func Notify(content NotifyContent) {
+ 		}
+ 	}
+ 
++	if os.Getenv("container") == "flatpak" {
++		content.Icon = "/app/share/icons/hicolor/512x512/apps/io.github.go_musicfox.go-musicfox.png"
++	}
++
+ 	_ = notify.Push(notificator.UrNormal, content.Title, content.Text, content.Icon, content.Url, content.GroupId)
+ }
