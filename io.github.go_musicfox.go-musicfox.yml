@@ -3,15 +3,15 @@ runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-    - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.golang
 command: musicfox
 
 finish-args:
-    - --share=network
-    - --socket=pulseaudio
-    - --talk-name=org.freedesktop.Notifications
+  - --share=network
+  - --socket=pulseaudio
+  - --talk-name=org.freedesktop.Notifications
     # App uses an ID different from FLAPAK_ID on DBus
-    - --own-name=org.mpris.MediaPlayer2.musicfox.*
+  - --own-name=org.mpris.MediaPlayer2.musicfox.*
 
 build-options:
   env:
@@ -34,12 +34,13 @@ modules:
       - install -Dm00644 io.github.go_musicfox.go-musicfox.appdata.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
       - type: git
-        url: "https://github.com/go-musicfox/go-musicfox.git"
-        tag: v4.6.2
+        url: https://github.com/go-musicfox/go-musicfox.git
+        tag: v4.6.3
         x-checker-data:
           type: anitya
-          project-id: 370571
+          project-id: 376106
           stable-only: true
           tag-template: v$version
+        commit: dd4f2c1ae76ca24787df50668654d01bdc5d0c9c
       - type: file
         path: io.github.go_musicfox.go-musicfox.appdata.xml
