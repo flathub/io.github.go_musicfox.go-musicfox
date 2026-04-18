@@ -35,12 +35,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/go-musicfox/go-musicfox.git
-        tag: v4.8.4
+        tag: v4.8.5
         x-checker-data:
           type: anitya
           project-id: 376106
           stable-only: true
           tag-template: v$version
-        commit: e657fe4516b775ae0f714fafaac35423e6709b5a
+        commit: 525209fe5c6680f4da6e8ca3929b889ffa937e09
       - type: file
         path: io.github.go_musicfox.go-musicfox.appdata.xml
