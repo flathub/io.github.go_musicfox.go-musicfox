@@ -1,6 +1,6 @@
 id: io.github.go_musicfox.go-musicfox
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "26.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -25,7 +25,7 @@ modules:
     build-commands:
       - make
       - install -Dm00755 bin/musicfox ${FLATPAK_DEST}/bin/musicfox
-      # Upstream icon is 1024x1024. Shrink to 512x512 to conform to icon standard. 
+      # Upstream icon is 1024x1024. Shrink to 512x512 to conform to icon standard.
       - ffmpeg -hide_banner -i previews/logo.png -vf scale=512:512 app-icon.png
       - install -Dm00644 app-icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       # The icon specified in the upstream dot desktop file does not play nicely with Flatpak.
@@ -35,12 +35,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/go-musicfox/go-musicfox.git
-        tag: v4.8.5
+        tag: v5.1.0
         x-checker-data:
           type: anitya
           project-id: 376106
           stable-only: true
           tag-template: v$version
-        commit: 525209fe5c6680f4da6e8ca3929b889ffa937e09
+        commit: ad6e3fa254761d9ca22cbc94175fed35946ebe49
       - type: file
         path: io.github.go_musicfox.go-musicfox.appdata.xml

@@ -35,6 +35,9 @@
   <url type="homepage">https://github.com/go-musicfox/go-musicfox</url>
   
   <releases>
+    <release version="5.1.0" date="2026-08-10">
+      <description></description>
+    </release>
     <release version="4.8.5" date="2026-04-20">
       <description></description>
     </release>
